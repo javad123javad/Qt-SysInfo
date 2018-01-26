@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->pushButton->setText("Javad");
-    ui->pushButton->setText("Javad raimifdf");
+    ui->pushButton->setText("Javad ragimifdf");
 
 }
 
