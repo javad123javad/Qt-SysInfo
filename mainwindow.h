@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "cpuwindget.h"
+#include "memorywidget.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -17,6 +19,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    CpuWindget cpuWidget;
+    MemoryWidget memWidget;
 };
 
 #endif // MAINWINDOW_H

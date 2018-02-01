@@ -6,15 +6,40 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets charts
 
-TARGET = ch02-sysinfo
+TARGET = SysInfoMonitor
 TEMPLATE = app
-
+CONFIG += C++14
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    sysinfo.cpp \
+    sysinfowidget.cpp \
+    cpuwindget.cpp \
+    memorywidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    sysinfo.h \
+    sysinfowidget.h \
+    cpuwindget.h \
+    memorywidget.h
+
+# Linux specific files
+linux{
+SOURCES += sysinfolinuximpl.cpp
+
+HEADERS  += sysinfolinuximpl.h
+
+message(Compile for Linux)
+}
+
+#Windows specific files
+windows{
+SOURCES += sysinfowindowsimpl.cpp
+
+HEADERS  += sysinfowindowsimpl.h
+message(Compile for windows)
+}
 
 FORMS    += mainwindow.ui
